@@ -1,0 +1,25 @@
+
+課題1
+Viewは何をするところか...
+Cotrollerの指示によってアクセスしてきたユーザーのブラウザに表示するデータを生成するところ
+
+課題2
+プログラマーがHTMLを書かずにPHPなどのプログラミング言語や
+フレームワークを使う必要があるのはどういった理由か
+
+決まったものを表示するhtmlファイルしか出力ができないため。
+ログインしたユーザーごとにWebページにユーザー名を表示したい場合などは、
+Model経由でデータベースからデータを取得し、
+それをhtmlファイルに記述してユーザーに渡す必要がある
+
+課題3
+add Action と edit Action を描画するには、
+それぞれどこのディレクトリに
+何というBladeファイルを設置すれば良いか
+1 resorces/profile/create.blade.php
+2 resorces/profile/edit.blade.php
+
+課題4
+下記に記載
+/mynews/resources/views/admin/profile/create.blade.php
+/mynews/resources/views/admin/profile/edit.blade.php
