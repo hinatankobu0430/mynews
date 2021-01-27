@@ -1,3 +1,21 @@
 PHP/Laravel 09
 課題1
+URLとControllerやActionをひも付ける機能のこと...
 
+　Rooting
+
+課題2
+あなたが考える、group化をすることのメリットを考えてみてください
+
+・URLのRoutingの設定を複数おこないたいから（テキストより抜粋）
+・コードを書く量を減らせる。
+・['prefix! => 'admin']のadminの部分を変えるだけでアクセス先を変えれる。
+
+課題3
+「http://XXXXXX.jp/XXX というアクセスが来たときに、 
+AAAControllerのbbbというAction に渡すRoutingの設定」を書く
+
+Route::get('XXX', 'Admin\AAAController@BBB');
+
+課題4/5は下記にて記載
+/mynews/routes/web.php
