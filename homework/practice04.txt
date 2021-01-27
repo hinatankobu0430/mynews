@@ -1,0 +1,27 @@
+課題1
+Bladeテンプレートで、埋め込みたい箇所に利用するワードは何？
+
+継承
+
+課題2
+Webpackで使われているBootstrapやSCSSはどういったものか...
+
+・bootstrp
+webページの見え方を制御するためのフレームワーク。
+webページでよく使われるフォーム・ボタン・メニューなどの
+部品がテンプレートとして用意されている。
+初心者でも知識がなくても簡単にサイトのデザインを整えることができる。
+
+・Sass（Syntactically Awesome StyleSheet）...とてもすごいスタイルシート？
+CSSを分割して管理したり、HTMLの構造に沿った直感的な記述ができるなど
+CSSを管理するためのwebアプリケーションの表示を効率的に制御できるフレームワーク。
+
+課題3
+下記に記載
+/mynews/resources/views/layouts/profile.blade.php
+
+課題4
+下記に記載
+/mynews/resources/views/admin/profile/create.blade.php
+
+課題5
