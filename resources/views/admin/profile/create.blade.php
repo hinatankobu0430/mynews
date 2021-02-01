@@ -9,8 +9,7 @@
     </head>
     <body>
         <h1>My Profile 作成画面</h1>
-@extends('layouts.admin')
-
+@extends('layouts.profile')
 
 {{-- admin.blade.phpの@yield('title')に'ニュースの新規作成'を埋め込む --}}
 @section('title', 'プロフィールの新規作成')
