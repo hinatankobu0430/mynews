@@ -67,6 +67,8 @@
                             @if ($profile_form->histories　!= NULL)
                                 @foreach ($profile_form->histories as $history)
                                     <li class="list-group-item">{{ $history->edited_at }}</li>
+                                @endforeach
+                            @endif
                         </ul>
                     </div>
                 </div>
