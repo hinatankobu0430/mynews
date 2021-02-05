@@ -35,7 +35,7 @@
                 <div class="form-group row">
                     <label class="col-md-2">趣味(hobby)</label>
                     <div class="col-md-10">
-                        <textarea class="form-control" name="hobby" rows="10">{{ old('hobby') }}</textarea>
+                       <input type="text" class="form-control" name="hobby" value="{{ old('hobby') }}">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -44,10 +44,12 @@
                         <textarea class="form-control" name="introduction" rows="12">{{ old('introduction') }}</textarea>
                     </div>
                 </div>
-                <input type="hidden" name="id" value="{{ $profile_form->id }}">
+                <input type="hidden" name="id" value="{{ $cond_title }}">
                 {{ csrf_field() }}
                 <input type="submit" class="btn btn-primary" value="更新">
             </form>
+                </div>
+            </div>
         </div>
     </div>
 </div>
