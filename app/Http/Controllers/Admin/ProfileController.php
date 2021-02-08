@@ -32,7 +32,7 @@ class ProfileController extends Controller
         $path = $request->file('image')->store('public/image');
         $profile->image_path = basename($path);
       } else {
-          $profile->image_path = null;
+        $profile->image_path = null;
       }
 
       // フォームから送信されてきた_tokenを削除する
@@ -43,8 +43,8 @@ class ProfileController extends Controller
       // データベースに保存する
       $profile->fill($form);
       $profile->save();
-
-        return redirect('admin/profile/create');
+      
+      return redirect('admin/profile/create');
     }
     
     public function edit(Request $request)
