@@ -29,7 +29,7 @@ class NewsController extends Controller
       $this->validate($request, News::$rules);
 
       $news = new News;
-      $form = $request->all();
+      $news_form = $request->all();
 
       // フォームから画像が送信されてきたら、保存して、$news->image_path に画像のパスを保存する
       if (isset($news_form['image'])) {
