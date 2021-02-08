@@ -6,6 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Dashboard</div>
+                <p>テスト実装。デプロイができているか確認</p>
 
                 <div class="card-body">
                     @if (session('status'))
