@@ -8,6 +8,7 @@
                     <div class="login-header card-header mx-auto">{{ __('messages.Login') }}</div>
 
                     <div class="login-body card-body">
+                        {{--form method=POSTはURLの後にデータを付け加えないで、ボディ部に格納して送信--}}
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
 
