@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\News;
 use App\History;
 use Carbon\Carbon;
+use Storage;
 
 class NewsController extends Controller
 //自分が実装したい機能をここに入れていく。
