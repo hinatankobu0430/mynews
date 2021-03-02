@@ -15,4 +15,10 @@ use Illuminate\Http\Request;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+    
+});
+//URLが/apiから始まる
+//csrf保護無効=外部からアクセスできる
+Route::group(['middleware' => ['api']], function(){
+  Route::get('news', 'Api\NewsController@index');
 });
