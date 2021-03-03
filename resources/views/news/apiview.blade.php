@@ -28,11 +28,22 @@
          <br>
 
          <h5>【課題】newsテーブルにデータを保存できるadd_newsボタンのAjaxを実装しましょう（値は決め打ちでokです）</h5>
+         <form action="{{ action('Api\NewsController@create') }}" method="get" enctype="multipart/form-data">
+
+                    @if (count($errors) > 0)
+                        <ul>
+                            @foreach($errors->all() as $e)
+                                <li>{{ $e }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
          <label>タイトル</label><br>
-         <input type = "text" class = 'new_title'></text>
+         <input type = "text" class = 'title' value="{{ old('title') }}"></text>
          <br>
          <label>本文</label><br>
-         <textarea class = 'new_body'></textarea>
+         <textarea class = 'body' value="{{ old('body') }}"></textarea>
+         <br>
+         <label class = 'image'>画像</label><input type = "file">
          <br>
          <button id='add_news'>add news</button>
          <br>
@@ -43,4 +54,5 @@
          </ul>
          <h5>【応用】画面で入力した値をnewsテーブルに保存できるよう改修しましょう</h5>
      </body>
+     </form>
  </html>

@@ -49559,26 +49559,19 @@ $(function () {
     var msg = '<p>hello</p>';
     $('.target_hello').append(msg);
   });
-  $('#add_news').click('on', function () {
+  $('#add_news').click('on', function create() {
     $.ajax({
-      url: 'api/news',
-      type: 'POST',
-      data: {}
-    }).done(function (response) {
-      console.log(response);
-      var row;
-
-      for (var i = 0; i < Object.keys(response).length; i++) {
-        row = row + "<tr>";
-        row = row + "<td>" + response[i].id + "</td>";
-        row = row + "<td>" + response[i].title + "</td>";
-        row = row + "<td>" + response[i].body + "</td>";
-        row = row + "</tr>";
+      url: '/api',
+      type: 'GET',
+      datatype: 'json',
+      data: {
+        title: "{{ old('title') }}",
+        body: "{{ old('body') }}"
       }
-
-      $('.news').append(row);
+    }).done(function () {
+      alert('success');
     }).fail(function () {
-      alert('エラー');
+      alert('error');
     });
   }); //通信して取得したデータを元に、HTMLを追加することもできる
 

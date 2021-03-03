@@ -34,3 +34,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/apiview', 'NewsController@apiview');
+Route::get('/api', 'NewsController@create');
