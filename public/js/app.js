@@ -49552,6 +49552,7 @@ $(function () {
   //ボタンを押すと色が変わる
   $('#change_color').click('on', function () {
     var colors = ['red', 'blue', 'yellow', 'white'];
+    console.log(colors);
     $('body').css("background-color", colors[getRandomIntInclusive(0, colors.length - 1)]);
   }); //HTMLを追加することもできる
 
@@ -49559,43 +49560,50 @@ $(function () {
     var msg = '<p>hello</p>';
     $('.target_hello').append(msg);
   });
-  $('#add_news').click('on', function create() {
-    $.ajax({
-      url: '/api',
-      type: 'GET',
-      datatype: 'json',
-      data: {
-        title: "{{ old('title') }}",
-        body: "{{ old('body') }}"
-      }
-    }).done(function () {
-      alert('success');
-    }).fail(function () {
-      alert('error');
-    });
-  }); //通信して取得したデータを元に、HTMLを追加することもできる
-
-  $('#get_news').click('on', function () {
+  $('#add_news').click('on', function () {
     $.ajax({
       url: 'api/news',
-      type: 'GET',
-      data: {}
-    }).done(function (response) {
-      console.log(response);
-      var row;
-
-      for (var i = 0; i < Object.keys(response).length; i++) {
-        row = row + "<tr>";
-        row = row + "<td>" + response[i].id + "</td>";
-        row = row + "<td>" + response[i].title + "</td>";
-        row = row + "<td>" + response[i].body + "</td>";
-        row = row + "</tr>";
+      type: 'POST',
+      datatype: 'json',
+      data: {
+        "title": $('#title').val(),
+        "body": $('#body').val()
       }
-
-      $('.news').append(row);
+    }).done(function () {
+      if ($('#title').val() != '' && $('#body').val() != '') {
+        alert('success');
+      }
     }).fail(function () {
-      alert('エラー');
+      var title = $('#title').val();
+      var body = $('#body').val();
+
+      if (title == '' || body == '') {
+        alert('error');
+      }
     });
+  });
+}); //通信して取得したデータを元に、HTMLを追加することもできる
+
+$('#get_news').click('on', function () {
+  $.ajax({
+    url: 'api/news',
+    type: 'GET',
+    data: {}
+  }).done(function (response) {
+    console.log(response);
+    var row;
+
+    for (var i = 0; i < Object.keys(response).length; i++) {
+      row = row + "<tr>";
+      row = row + "<td>" + response[i].id + "</td>";
+      row = row + "<td>" + response[i].title + "</td>";
+      row = row + "<td>" + response[i].body + "</td>";
+      row = row + "</tr>";
+    }
+
+    $('.news').append(row);
+  }).fail(function () {
+    alert('エラー');
   });
 });
 /*

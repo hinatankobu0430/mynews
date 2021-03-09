@@ -21,5 +21,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 //csrf保護無効=外部からアクセスできる
 Route::group(['middleware' => ['api']], function(){
   Route::get('news', 'Api\NewsController@index');
-  Route::get('apiview', 'Api\NewsController@create');
+  Route::post('news', 'Api\NewsController@post');
 });
